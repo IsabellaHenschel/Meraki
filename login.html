@@ -3,19 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Login</title>
-    <meta name="keywords" content="Organizador de livros, livro, livros, organizar, organização">
-    <meta name="description"
-        content="O NOME A DEFINIR vai facilitar sua vida de leitor, o ajudando com a organização de suas leituras">
-    <meta name="author" content="Isabella Henschel, Eduarda Schimitt, Camila Pool">
+    <title>Home</title>
+    <meta name="keywords" content="Organizador de livros, livro, livros, organizar, organização, meraki">
+    <meta name="description" content="O Meraki vai facilitar sua vida de leitor, o ajudando com a organização de suas leituras">
+    <meta name="author" content="Isabella Henschel, Eduarda Schimitt">
     <link rel="shortcut icon" type="image/x-icon" href="imagens/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&display=swap"
-        rel="stylesheet">
-    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        body{
+            background-image: url("imagens/background_login.jpg");
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <nav class="navbar navbar-expand-lg navbar-light p-0">
     
                 <a class="navbar-brand"><img src="imagens/logo.png" height="35px"></a>
-                <span class="navbar-text" style="color: black;">NOME A DEFINIR</span>
+                <span class="navbar-text" style="color: black;">Meraki</span>
     
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,60 +58,46 @@
         </div>
     </div>
 
-    <footer>
-        <div id="rodapé">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 align-self-start mb-md-0 p-3">
-                        <ul class="d-flex">
-                            <li><img src="imagens/logo_em_preto.png" alt="logo" height="35px"></li>
-                            <li>
-                                <h5 class="titulo" style="padding-top: 5px; padding-left: 15px;">NOME A DEFINIR</h5>
-                            </li>
-                        </ul>
-                        <p class="estiloEmCinza">
-                            Frase ou slogan sobre o site.
-                        </p>
+    <div id="login" class="bloco">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="imagens/logo_em_azul.png" class="brand_logo" alt="Logo">
+                        </div>
                     </div>
-                    <div id="links_footer" class="col-md-2 align-self-start mb-md-0 p-3">
-                        <h5 class="titulo"><i>Explore</i></h5>
-                        <ul style="padding-top: 15px;">
-                            <li>
-                                <a href="index.html" class="estiloEmCinza">Home</a>
-                            </li>
-                            <li>
-                                <a href="sobre_nós.html" class="estiloEmCinza">Sobre Nós</a>
-                            </li>
-                            <li>
-                                <a href="biblioteca.html" class="estiloEmCinza">Biblioteca</a>
-                            </li>
-                            <li>
-                                <a href="login.html" class="estiloEmCinza">Login</a>
-                            </li>
-                        </ul>
+                    <div class="d-flex justify-content-center form_container">
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control input_user" placeholder="Nome de usuário">
+                            </div>
+                            <div class="input-group mb-2">
+                                <input type="password" class="form-control input_pass" placeholder="Senha">
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Lembre-me</label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                                <button type="button" name="button" class="btn button-tres btn-outline-primary button d-md-inline-block d-block">Login</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-md-5 align-self-start mb-md-0 p-3">
-                        <h5 class="titulo"><i>Contato</i></h5>
-                        <ul class="d-flex justify-content-between" style="padding-top: 15px;">
-                            <li>
-                                <a href="#"><img src="imagens/facebook.png" alt="logo facebook"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="imagens/instagram.png" alt="logo instagram"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="imagens/email.png" alt="logo gmail"></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="imagens/github.png" alt="logo github"></a>
-                            </li>
-                        </ul>
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center links">
+                            Não tem login? <a href="#" class="ml-2">Cadastre-se</a>
+                        </div>
+                        <div class="d-flex justify-content-center links">
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
                     </div>
-    
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
