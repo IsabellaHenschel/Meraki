@@ -15,6 +15,7 @@
 :root{
     --azulAcinzentado: #0b3c5d;
     --azul: #328cc1;
+    --azulClaro: #77b6db;
     --amarelo: #f2c708;
     --amareloClaro: #f7db60;
     --bege: #fceb9f;
@@ -68,6 +69,7 @@ body{
 }
 
 #header.navbar-text{
+    font-family: "Good Vibes";
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -155,10 +157,25 @@ a.nav-link.nav-item:hover{
     border-right-width: 2px;
 }
 
+.button-tres{
+    color: var(--azul);
+    border-color: var(--azul);
+    border-bottom-width: 2px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+}
+
 .button:hover{
     color: white;
     border-color: var(--amareloClaro);
     background-color: var(--amareloClaro);
+}
+
+.button-tres:hover{
+    color: white;
+    border-color: var(--azulClaro);
+    background-color: var(--azulClaro);
 }
 
 #slider{
@@ -220,4 +237,35 @@ footer {
     border-bottom: solid var(--amarelo);
     border-bottom-width: 2px;
     color: var(--azul);
+}
+
+/*Login*/
+.user_card {
+    height: 400px;
+    width: 350px;
+    margin-top: 115px;
+    margin-bottom: auto;
+    background: var(--amareloClaro);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+
+.brand_logo_container {
+    position: absolute;
+    top: 33px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 70px;
+    width: 70px;
+}
+
+.form_container {
+	margin-top: 100px;
 }
