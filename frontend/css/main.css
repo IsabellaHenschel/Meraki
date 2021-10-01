@@ -12,6 +12,11 @@
     }
 }
 
+@font-face{
+    font-family: 'Moving Skate';
+    src: url(./fontes/moving_skate/Moving_Skate.ttf)
+}
+
 :root{
     --azulAcinzentado: #0b3c5d;
     --azul: #328cc1;
@@ -69,7 +74,7 @@ body{
 }
 
 #header.navbar-text{
-    font-family: "Good Vibes";
+    font-family: 'Moving Skate';
     text-transform: uppercase;
     font-weight: 500;
 }
@@ -243,7 +248,7 @@ footer {
 .user_card {
     height: 400px;
     width: 350px;
-    margin-top: 115px;
+    margin-top: auto;
     margin-bottom: auto;
     background: var(--amareloClaro);
     position: relative;
@@ -268,4 +273,10 @@ footer {
 
 .form_container {
 	margin-top: 100px;
+}
+#login.bloco{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
 }
