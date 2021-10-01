@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Home</title>
+    <title>Login</title>
     <meta name="keywords" content="Organizador de livros, livro, livros, organizar, organização, meraki">
     <meta name="description" content="O Meraki vai facilitar sua vida de leitor, o ajudando com a organização de suas leituras">
     <meta name="author" content="Isabella Henschel, Eduarda Schimitt">
@@ -15,6 +15,9 @@
     <style>
         body{
             background-image: url("imagens/background_login.jpg");
+            background-position: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
 </head>
@@ -36,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
     
                     <a class="nav-link nav-item" href="index.html">Home</a>
-                    <a class="nav-link nav-item" href="sobre_nós.html">Sobre Nós</a>
+                    <a class="nav-link nav-item" href="sobre_nos.html">Sobre Nós</a>
     
                     <div class="dropdown">
                         <a class="nav-link nav-item dropdownA" href="biblioteca.html">Biblioteca <svg
@@ -46,7 +49,7 @@
                                     d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg></a>
                         <div class="dropdownItens">
-                            <a href="#">Livros</a>
+                            <a id="listar_livros" href="biblioteca.html">Livros</a>
                             <a href="#">Adicionar Livro</a>
                             <a href="#">Atualizar leitura</a>
                         </div>
@@ -58,7 +61,7 @@
         </div>
     </div>
 
-    <div id="login" class="bloco">
+    <div id="login" class="bloco mb-0">
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="user_card">
@@ -106,7 +109,6 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/meuscript.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
