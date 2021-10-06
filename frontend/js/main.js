@@ -22,8 +22,8 @@ jQuery(document).ready(function ($) {
             });
 
             function listar(livros) {
-                $('#corpoTabelaLivross').empty();
-                mostrar_conteudo("tabelaLivross");
+                $('#corpoTabelaLivros').empty();
+                mostrar_conteudo("tabelaLivros");
                 for (var i in livros) {
                     lin = '<tr>' +
                         '<td>' + livros[i].titulo + '</td>' +
@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
 
         function mostrar_conteudo(identificador) {
             $("#tabelaLivros").addClass('invisible');
-            $("#conteudoInicial").addClass('invisible');
+            //$("#conteudoInicial").addClass('invisible');
             $("#" + identificador).removeClass('invisible');
         };
 
@@ -49,9 +49,9 @@ jQuery(document).ready(function ($) {
             exibir_livros();
         });
 
-        $(document).on("click", "#linkInicio", function () {
+        /*$(document).on("click", "#linkInicio", function () {
             mostrar_conteudo("conteudoInicial");
-        });
+        });*/
 
         $(document).on("click", "#btIncluirLivro", function () {
             titulo = $("#campoTitulo").val();
@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
             var dados = JSON.stringify({ titulo: titulo, autor: autor, editora: editora, genero: genero, isbn: isbn });
 
             $.ajax({
-                url: 'http://localhost:5000/incluir_livros',
+                url: 'http://localhost:5000/incluir_livro',
                 method: 'POST',
                 dataType: 'json',
                 contentType: 'application/json', 
@@ -73,12 +73,18 @@ jQuery(document).ready(function ($) {
 
             function livroIncluido(retorno) {
                 if (retorno.resultado == "ok") {
-                    alert("Pessoa incluída com sucesso!");
+                    //alert("Pessoa incluída com sucesso!");
+                    
+                    /*$('#modalIncluirLivro').modal('show');
+                    setTimeout(function () {
+                        $('#modalIncluirLivro').modal('hide')
+                    }, 2000);*/
                     $("#campoTitulo").val("");
                     $("#campoAutor").val("");
                     $("#campoEditora").val("");
                     $("#campoGenero").val("");
                     $("#campoIsbn").val("");
+                
                 } else {
                     alert(retorno.resultado + ":" + retorno.detalhes);
                 }
@@ -95,7 +101,7 @@ jQuery(document).ready(function ($) {
             }
         });
 
-        mostrar_conteudo("conteudoInicial");
+        //mostrar_conteudo("conteudoInicial");
 
     });
 });
