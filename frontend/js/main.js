@@ -41,7 +41,6 @@ jQuery(document).ready(function ($) {
 
         function mostrar_conteudo(identificador) {
             $("#tabelaLivros").addClass('invisible');
-            //$("#conteudoInicial").addClass('invisible');
             $("#" + identificador).removeClass('invisible');
         };
 
@@ -73,7 +72,7 @@ jQuery(document).ready(function ($) {
 
             function livroIncluido(retorno) {
                 if (retorno.resultado == "ok") {
-                    //alert("Pessoa incluída com sucesso!");
+                    alert("Pessoa incluída com sucesso!");
                     
                     /*$('#modalIncluirLivro').modal('show');
                     setTimeout(function () {
