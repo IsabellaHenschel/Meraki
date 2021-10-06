@@ -17,16 +17,6 @@ def listar_livros():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-'''
-@app.route("/listar_bibliotecas")
-def listar_bibliotecas():
-    bibliotecas = db.session.query(Biblioteca).all()
-    retorno = []
-    for b in bibliotecas:
-        retorno.append(b.json())
-    resposta = jsonify(retorno)
-    return resposta'''
-
 @app.route("/incluir_livro", methods=['post'])
 def incluir_livro():
     resposta = jsonify({"resultado:": "ok", "detalhes": "ok"})
