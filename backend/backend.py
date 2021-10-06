@@ -19,7 +19,7 @@ def listar_livros():
 
 @app.route("/incluir_livro", methods=['post'])
 def incluir_livro():
-    resposta = jsonify({"resultado:": "ok", "detalhes": "ok"})
+    resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     dados = request.get_json()
     try: 
         nova = Livro(**dados)
