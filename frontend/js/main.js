@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
                 $('#corpoTabelaLivros').empty();
                 mostrar_conteudo("tabelaLivros");
                 for (var i in livros) {
-                    lin = '<tr>' +
+                    lin = '<tr id="linha_'+livros[i].id+'">' +
                         '<td>' + livros[i].titulo + '</td>' +
                         '<td>' + livros[i].autor + '</td>' +
                         '<td>' + livros[i].editora + '</td>' +
@@ -119,9 +119,9 @@ jQuery(document).ready(function ($) {
             });
             function livroExcluido(retorno) {
                 if (retorno.resultado == "ok") {
-                    $("#linha_" + id_livro).fadeOut(1000, function () {
-                        alert("Livro removido com sucesso!");
-                    });
+                    $("#linha_" + id_livro).fadeOut(1000);//, function () {
+                       // alert("Livro removido com sucesso!");
+                    //});
                 } else {
                     alert(retorno.resultado + ":" + retorno.detalhes);
                 }
