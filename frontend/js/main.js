@@ -34,8 +34,8 @@ jQuery(document).ready(function ($) {
                         '<td><a href=# id="excluir_' + livros[i].id + '" ' +
                         'class="excluir_livro"><img src="imagens/excluir.png" ' +
                         'alt="Excluir livro" title="Excluir livro"></a>' +
-                        '</td>' + 
-                    '</tr>';
+                        '</td>' +
+                        '</tr>';
 
                     $('#corpoTabelaLivros').append(lin)
                 }
@@ -105,6 +105,31 @@ jQuery(document).ready(function ($) {
         });
 
         //mostrar_conteudo("conteudoInicial");
+
+        $(document).on("click", ".excluir_livro", function () {
+            var componente_clicado = $(this).attr('id');
+            var nome_icone = "excluir_";
+            var id_livro = componente_clicado.substring(nome_icone.length);
+            $.ajax({
+                url: 'http://localhost:5000/excluir_livro/' + id_livro,
+                type: 'DELETE',
+                dataType: 'json',
+                success: livroExcluido,
+                error: erroAoExcluir
+            });
+            function livroExcluido(retorno) {
+                if (retorno.resultado == "ok") {
+                    $("#linha_" + id_livro).fadeOut(1000, function () {
+                        alert("Livro removido com sucesso!");
+                    });
+                } else {
+                    alert(retorno.resultado + ":" + retorno.detalhes);
+                }
+            }
+            function erroAoExcluir(retorno) {
+                alert("erro ao excluir dados, verifique o backend: ");
+            }
+        });
 
     });
 });
