@@ -31,7 +31,11 @@ jQuery(document).ready(function ($) {
                         '<td>' + livros[i].editora + '</td>' +
                         '<td>' + livros[i].genero + '</td>' +
                         '<td>' + livros[i].isbn + '</td>' +
-                        '</tr>';
+                        '<td><a href=# id="excluir_' + livros[i].id + '" ' +
+                        'class="excluir_livro"><img src="imagens/excluir.png" ' +
+                        'alt="Excluir livro" title="Excluir livro"></a>' +
+                        '</td>' + 
+                    '</tr>';
 
                     $('#corpoTabelaLivros').append(lin)
                 }
@@ -64,7 +68,7 @@ jQuery(document).ready(function ($) {
                 url: 'http://localhost:5000/incluir_livro',
                 method: 'POST',
                 dataType: 'json',
-                contentType: 'application/json', 
+                contentType: 'application/json',
                 data: dados,
                 success: livroIncluido,
                 error: erroAoIncluir
@@ -73,7 +77,7 @@ jQuery(document).ready(function ($) {
             function livroIncluido(retorno) {
                 if (retorno.resultado == "ok") {
                     alert("Pessoa incluída com sucesso!");
-                    
+
                     /*$('#modalIncluirLivro').modal('show');
                     setTimeout(function () {
                         $('#modalIncluirLivro').modal('hide')
@@ -83,7 +87,7 @@ jQuery(document).ready(function ($) {
                     $("#campoEditora").val("");
                     $("#campoGenero").val("");
                     $("#campoIsbn").val("");
-                
+
                 } else {
                     alert(retorno.resultado + ":" + retorno.detalhes);
                 }
