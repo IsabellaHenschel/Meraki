@@ -30,4 +30,15 @@ def incluir_livro():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
+@app.route("/excluir_livro/<int:livro_id>", methods=[’DELETE’]) 
+def excluir_livro(livro_id): 
+   resposta = jsonify({"resultado": "ok", "detalhes": "ok"}) 
+   try: 
+      Livro.query.filter(Livro.id == livro_id).delete() 
+      db.session.commit() 
+   except Exception as e: 
+      resposta = jsonify({"resultado":"erro", "detalhes":str(e)}) 
+   resposta.headers.add("Access-Control-Allow-Origin", "*") 
+   return resposta
+
 app.run(debug = True)
