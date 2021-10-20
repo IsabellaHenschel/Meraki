@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
 
             function livroIncluido(retorno) {
                 if (retorno.resultado == "ok") {
-                    alert("Livro incluído com sucesso!");
+                    alert("Livro incluído com sucesso! Atualize o site para ver os novos adcionados livros!");
 
                     /*$('#modalIncluirLivro').modal('show');
                     setTimeout(function () {
