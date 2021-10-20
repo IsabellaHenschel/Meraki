@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
 
             function livroIncluido(retorno) {
                 if (retorno.resultado == "ok") {
-                    alert("Pessoa incluída com sucesso!");
+                    alert("Livro incluído com sucesso!");
 
                     /*$('#modalIncluirLivro').modal('show');
                     setTimeout(function () {
