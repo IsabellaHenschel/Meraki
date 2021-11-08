@@ -42,7 +42,6 @@ class Livro(db.Model):
         }
 
 
-
 class Leitor(db.Model):
     """Esta classe representa um leitor, tendo como atributos o id, nome, livro_id e livro.
 
@@ -76,6 +75,7 @@ class Leitor(db.Model):
             "livro_id": self.livro_id,
             "livro": self.livro_lido.json()
         }
+
 
 class Biblioteca(db.Model):
     """Esta classe representa uma biblioteca do mundo real, tendo como atributos o id, nome, livro_id e livro.
