@@ -42,38 +42,19 @@ class Livro(db.Model):
         }
 
 
-class Leitor(db.Model):
-    """Esta classe representa um leitor, tendo como atributos o id, nome, livro_id e livro.
-
-    Args:
-        id (int): ID da biblioteca.
-        nome (str): Nome da biblioteca.
-        livro_id (int): ID do livro e atributo de chave estrangeira.
-        livro_lido : Atributo de relacionamento, para acesso aos dados via objeto.
-    """
+class Pessoa(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(200))
-    email = db.Column(db.String(200))
-    livro_id = db.Column(db.Integer, db.ForeignKey(Livro.id), nullable=False)
-    livro_lido = db.relationship("Livro")
+    nome = db.Column(db.String(254))
+    email = db.Column(db.String(254))
 
     def __str__(self):
-        """Este método expressa as informações do leitor em forma de texto.
-        """
-        return str(self.id) + "," + \
-            self.nome + ", " + \
-            self.email + ", " + \
-            str(self.livro)
+        return self.nome + "[id="+str(self.id)+ "], " + self.email
 
     def json(self):
-        """Este método expressa as informações do leitor em formato json.
-        """
         return {
             "id": self.id,
             "nome": self.nome,
             "email": self.email,
-            "livro_id": self.livro_id,
-            "livro": self.livro_lido.json()
         }
 
 
