@@ -42,36 +42,6 @@ class Livro(db.Model):
         }
 
 
-class Biblioteca(db.Model):
-    """Esta classe representa uma biblioteca do mundo real, tendo como atributos o id, nome, livro_id e livro.
-
-    Args:
-        id (int): ID da biblioteca.
-        nome (str): Nome da biblioteca.
-        livro_id (int): ID do livro e atributo de chave estrangeira.
-        livro : Atributo de relacionamento, para acesso aos dados via objeto.
-    """
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(200))
-    livro_id = db.Column(db.Integer, db.ForeignKey(Livro.id), nullable=False)
-    livro = db.relationship("Livro")
-
-    def __str__(self):
-        """Este método expressa a biblioteca em forma de texto.
-        """
-        return str(self.id) + "," + \
-            self.nome + ", " + \
-            str(self.livro)
-
-    def json(self):
-        """Este método expressa a biblioteca em formato json.
-        """
-        return {
-            "id": self.id,
-            "nome": self.nome,
-            "livro_id": self.livro_id,
-            "livro": self.livro.json()
-        }
 
 class Leitor(db.Model):
     """Esta classe representa um leitor, tendo como atributos o id, nome, livro_id e livro.
@@ -105,6 +75,37 @@ class Leitor(db.Model):
             "email": self.email,
             "livro_id": self.livro_id,
             "livro": self.livro_lido.json()
+        }
+
+class Biblioteca(db.Model):
+    """Esta classe representa uma biblioteca do mundo real, tendo como atributos o id, nome, livro_id e livro.
+
+    Args:
+        id (int): ID da biblioteca.
+        nome (str): Nome da biblioteca.
+        livro_id (int): ID do livro e atributo de chave estrangeira.
+        livro : Atributo de relacionamento, para acesso aos dados via objeto.
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(200))
+    livro_id = db.Column(db.Integer, db.ForeignKey(Livro.id), nullable=False)
+    livro = db.relationship("Livro")
+
+    def __str__(self):
+        """Este método expressa a biblioteca em forma de texto.
+        """
+        return str(self.id) + "," + \
+            self.nome + ", " + \
+            str(self.livro)
+
+    def json(self):
+        """Este método expressa a biblioteca em formato json.
+        """
+        return {
+            "id": self.id,
+            "nome": self.nome,
+            "livro_id": self.livro_id,
+            "livro": self.livro.json()
         }
 
 if __name__ == "__main__":
